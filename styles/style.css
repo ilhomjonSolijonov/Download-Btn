@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+body .button {
+  position: absolute;
+  height: 95px;
+  width: 360px;
+  background: #7d2ae8;
+  border-radius: 55px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.4s cubic-bezier(0.68, -0.55, 0.256, 1.55);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.256, 1.55);
+  overflow: hidden;
+  cursor: pointer;
+}
+body .button .content {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+body .button .content i, body .button .content .button-text {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 500;
+}
+body .button .content .button-text {
+  font-size: 28px;
+  margin-left: 8px;
+  color: #fff;
+}
+body .button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  left: -100%;
+  background: #5b13b9;
+  border-radius: 55px;
+}
+body .button.active {
+  height: 20px;
+  width: 500px;
+}
+body .button.active .content {
+  -webkit-transform: translateY(60px);
+          transform: translateY(60px);
+}
+body .button.active::before {
+  -webkit-animation: layer 6s ease-in-out forwards;
+          animation: layer 6s ease-in-out forwards;
+}
+@-webkit-keyframes layer {
+  100% {
+    left: 0%;
+  }
+}
+@keyframes layer {
+  100% {
+    left: 0%;
+  }
+}

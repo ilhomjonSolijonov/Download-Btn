@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .button{
+        position: absolute;
+        height: 95px;
+        width: 360px;
+        background: #7d2ae8;
+        border-radius: 55px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        transition: all 0.4s cubic-bezier(0.68, -0.55, 0.256, 1.55);
+        overflow: hidden;
+        cursor: pointer;
+        .content{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            transition-delay: 0.2s;
+            i, .button-text{
+                color: #fff;
+                font-size: 40px;
+                font-weight: 500;
+
+            }
+            .button-text{
+                font-size: 28px;
+                margin-left: 8px;
+                color: #fff;
+            }
+        }
+    }
+    .button::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        left: -100%;
+        background: #5b13b9;
+        border-radius: 55px;
+    }
+    .button.active{
+        height: 20px;
+        width: 500px;
+        .content{
+            transform: translateY(60px);
+        }
+    }
+    .button.active::before{
+        animation: layer 6s ease-in-out forwards;
+    }
+    @keyframes layer{
+        100%{
+            left: 0%;
+        }
+    }
+
+}
